@@ -1,0 +1,92 @@
+treasurecatalouge_bot 1.0
+
+==== SET UP ====
+
+1) Please download the "Java Development Kit" version 8 (JDK8) available at this link and install it. https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html (Take note of the installation path)
+
+2) Now you'll need to add the Java binaries folder to your PATH system variable. To do so, first search for "System variables" into the Windows 10 search bar. Select the first result
+
+3) Click on the "Environment variables" button in the bottom right corner of the window it opens
+
+4) In the "System Variables" section there should be one called PATH. Click on it and then click "Edit" (If you can't find it then click New and create a new one called PATH)
+
+5) Now in a new column (or in the text box if you just created a new one) you have to insert the exact path for the Java binaries (there are two). It should look like so: C:\Program Files(x86)\Java\jdk_181\bin and C:\Program Files(x86)\Java\jre_181\bin
+
+6) After doing so it's time to check if it's done correctly: Please run the BotStartUP.bat file (the .bat and .jar file need to be in the same folder) and look for the output in the terminal. If it says something like "java is not an external program...." etc then you have not configured the system variables in the right way. feel free to ask me help if you needed. If it doesn't say so, congrats! Your bot now works. It only needs configuration.
+
+
+==== CONFIGURATION ====
+
+1) This bot is ready out of the box! No config needed! - Just run the BotStartUP.bat file, and it will start working.
+
+
+==== DATABASE MANAGEMENT ====
+
+1) The bot's database is db.json. It contains a single json object, with one key ("data"). Inside data, you will find various JSON Arrays, one for each Island.
+
+2) In every Island Array, you will find a list of strings, which are the names of the items you can find on that island.
+
+3) If you want to add a new item to the database, you can do so by adding a new string to the array of the island you want to add it to. (If you want to add it to a new island, you can do so by adding a new array to the data object, and then adding the item to that array)
+
+EXAMPLE:
+
+{
+  "data": {
+    "island1": [
+      "item1",
+      "item2",
+      "item3"
+    ],
+    "island2": [
+      "item4",
+      "item5",
+      "item6"
+    ]
+  }
+}
+
+4) If you want to remove an item from the database, you can do so by removing the string from the array of the island you want to remove it from.
+
+!!! WARNING !!!
+The bot WILL crash if there's a JSON parsing error. If you want to edit the database, please use a JSON editor like https://jsoneditoronline.org/ to avoid any errors. If you want to add a new island, please make sure to add a comma at the end of the previous array, or the bot will crash. (The last array in the data object doesn't need a comma at the end)
+
+5) Inside the config.json file, you can change the bot's string that will be used in case no item is found.
+
+==== MORE INFO ====
+
+1) The bot needs to be running in order for it to work.
+
+2) This work is protected by the CC BY-NC-ND 4.0 International License. This means the following:
+
+2.a) You can redistribute this program, under the following terms:
+
+2.a.i) You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+2.a.ii) NonCommercial — You may not use the material for commercial purposes.
+
+2.a.iii) NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.
+
+2.a.iv) No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+2.b) More info can be found at the following link: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+3) The bot will reply to !search, !find and !locate - you can also reload the in-memory database and config by using !reload (this command can only be used by the streamer)
+
+
+==== HOW TO RUN THE BOT ====
+
+1) Open the BotStartUP.bat file I gave you.
+
+2) That's it! The bot is running and will be running as long as the command prompt window is open.
+
+
+==== UNEXPECTED BEHAVIOUR ====
+
+If the bot crashes, doesn't do as advertised etc. etc. You can always come back to me! If I made a mistake, I promise I'll fix it for free :) Just let me know :D
+
+That's it! I think I said everything. Hope you'll enjoy this program I made for you just as much as I did while making it! A 5 star review would be very appreciated :)
+Hope to work with you again in the future!
+
+Remember, if you need any help, ask me! I'll reply to you ASAP
+
+Claudio De Marzo, fiverr freelancer programmer
