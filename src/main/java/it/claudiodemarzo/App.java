@@ -13,7 +13,7 @@ import java.util.*;
 public class App {
     private static final String TOKEN = "dmwc3wx56hlhx73lkoh7oqlorkd49x";
     private static final String CHANNEL_NAME = "treasureislands";
-    private static final String VERSION = "1.0";
+    private static final String VERSION = "1.1";
 
     private static String UNAVAILABLE_STRING;
 
@@ -129,8 +129,8 @@ public class App {
                             System.err.println("Item "+query+" not found");
                             client.getChat().sendMessage(CHANNEL_NAME, UNAVAILABLE_STRING);
                         } else {
-                            System.err.println("Item "+query+" found in " + result);
-                            client.getChat().sendMessage(CHANNEL_NAME, "Item "+query+" found in " + result);
+                            System.err.println("Item "+query+" found on " + result);
+                            client.getChat().sendMessage(CHANNEL_NAME, "Item "+query+" found on " + result);
                         }
                         break;
                     case "reload":

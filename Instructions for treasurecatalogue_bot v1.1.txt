@@ -1,4 +1,16 @@
-treasurecatalouge_bot 1.0
+treasurecatalouge-bot 1.1
+
+==== CHANGELOG ====
+
+1) Updated output String when item is found. (v1.1)
+
+
+=== HOW TO UPDATE ===
+
+1) Just extract the files in the compressed folder in the same folder as the older version is located. Replace any files if asked. (.json files from previous version work with this version so you may use the same ones if you want)
+
+2) Start up the bot just as you used to.
+
 
 ==== SET UP ====
 
