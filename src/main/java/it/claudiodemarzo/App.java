@@ -133,7 +133,7 @@ public class App {
                             }
                             else {
                                 System.err.println("Item " + query + " found on the following islands: " + String.join(", ", result));
-                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found the following islands: " + String.join(", ", result));
+                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found on the following islands: " + String.join(", ", result));
                             }
                         }
                         break;
