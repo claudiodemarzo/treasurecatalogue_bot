@@ -1,8 +1,10 @@
-treasurecatalouge-bot 1.1
+treasurecatalouge-bot 1.2
 
 ==== CHANGELOG ====
 
 1) Updated output String when item is found. (v1.1)
+
+2) Bot now replies with more than 1 island name if the item is found on more than 1 island. (v1.2)
 
 
 === HOW TO UPDATE ===

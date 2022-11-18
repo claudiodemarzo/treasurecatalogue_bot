@@ -13,14 +13,12 @@ import java.util.*;
 public class App {
     private static final String TOKEN = "dmwc3wx56hlhx73lkoh7oqlorkd49x";
     private static final String CHANNEL_NAME = "treasureislands";
-    private static final String VERSION = "1.1";
-
+    private static final String VERSION = "1.2";
     private static String UNAVAILABLE_STRING;
 
     private static TwitchClient client;
     private static final File DATABASE = new File("db.json"),
             CONFIG = new File("config.json");
-
     private static final HashMap<String, ArrayList<String>> ITEMS = new HashMap<>();
 
     public static void main(String[] args) {
@@ -124,13 +122,19 @@ public class App {
                         }
                         String query = String.join(" ", arguments).trim();
                         System.err.println("Querying item: " + query);
-                        String result = search(query);
-                        if (result.equals(UNAVAILABLE_STRING)) {
-                            System.err.println("Item "+query+" not found");
+                        List<String> result = search(query);
+                        if (result.isEmpty()) {
+                            System.err.println("Item " + query + " not found");
                             client.getChat().sendMessage(CHANNEL_NAME, UNAVAILABLE_STRING);
                         } else {
-                            System.err.println("Item "+query+" found on " + result);
-                            client.getChat().sendMessage(CHANNEL_NAME, "Item "+query+" found on " + result);
+                            if(result.size() == 1) {
+                                System.err.println("Item " + query + " found on " + result);
+                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found on " + result);
+                            }
+                            else {
+                                System.err.println("Item " + query + " found the following islands: " + String.join(", ", result));
+                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found the following islands: " + String.join(", ", result));
+                            }
                         }
                         break;
                     case "reload":
@@ -173,12 +177,11 @@ public class App {
         });
     }
 
-    private static String search(String query) {
-        String result = UNAVAILABLE_STRING;
+    private static List<String> search(String query) {
+        List<String> result = new ArrayList<>();
         for (String island : ITEMS.keySet()) {
             if (ITEMS.get(island).contains(query.toLowerCase())) {
-                result = island;
-                break;
+                result.add(island);
             }
         }
         return result;
