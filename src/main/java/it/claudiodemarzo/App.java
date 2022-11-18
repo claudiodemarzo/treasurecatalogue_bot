@@ -128,11 +128,11 @@ public class App {
                             client.getChat().sendMessage(CHANNEL_NAME, UNAVAILABLE_STRING);
                         } else {
                             if(result.size() == 1) {
-                                System.err.println("Item " + query + " found on " + result);
-                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found on " + result);
+                                System.err.println("Item " + query + " found on " + result.get(0));
+                                client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found on " + result.get(0));
                             }
                             else {
-                                System.err.println("Item " + query + " found the following islands: " + String.join(", ", result));
+                                System.err.println("Item " + query + " found on the following islands: " + String.join(", ", result));
                                 client.getChat().sendMessage(CHANNEL_NAME, "Item " + query + " found the following islands: " + String.join(", ", result));
                             }
                         }
