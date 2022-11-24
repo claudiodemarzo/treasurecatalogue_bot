@@ -180,8 +180,10 @@ public class App {
     private static List<String> search(String query) {
         List<String> result = new ArrayList<>();
         for (String island : ITEMS.keySet()) {
-            if (ITEMS.get(island).contains(query.toLowerCase())) {
-                result.add(island);
+            for(String item : ITEMS.get(island)) {
+                if(item.equalsIgnoreCase(query)) {
+                    result.add(island);
+                }
             }
         }
         return result;
