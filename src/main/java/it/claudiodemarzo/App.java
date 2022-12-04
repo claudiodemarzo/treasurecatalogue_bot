@@ -13,7 +13,7 @@ import java.util.*;
 public class App {
     private static final String TOKEN = "dmwc3wx56hlhx73lkoh7oqlorkd49x";
     private static final String CHANNEL_NAME = "treasureislands";
-    private static final String VERSION = "1.2";
+    private static final String VERSION = "1.4";
     private static String UNAVAILABLE_STRING;
 
     private static TwitchClient client;
@@ -181,7 +181,7 @@ public class App {
         List<String> result = new ArrayList<>();
         for (String island : ITEMS.keySet()) {
             for(String item : ITEMS.get(island)) {
-                if(item.equalsIgnoreCase(query)) {
+                if(item.toLowerCase().contains(query.toLowerCase())) {
                     result.add(island);
                 }
             }
