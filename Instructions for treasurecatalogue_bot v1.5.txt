@@ -1,4 +1,4 @@
-treasurecatalouge-bot 1.4
+treasurecatalouge-bot 1.5
 
 ==== CHANGELOG ====
 
@@ -9,6 +9,8 @@ treasurecatalouge-bot 1.4
 3) Search is now case-insensitive (v1.3)
 
 4) Fixed a bug that caused the bot not to recognize accents properly (v1.4)
+
+5) Added token in config file (v1.5s)
 
 
 === HOW TO UPDATE ===
@@ -68,7 +70,7 @@ EXAMPLE:
 !!! WARNING !!!
 The bot WILL crash if there's a JSON parsing error. If you want to edit the database, please use a JSON editor like https://jsoneditoronline.org/ to avoid any errors. If you want to add a new island, please make sure to add a comma at the end of the previous array, or the bot will crash. (The last array in the data object doesn't need a comma at the end)
 
-5) Inside the config.json file, you can change the bot's string that will be used in case no item is found.
+5) Inside the config.json file, you can change the bot's string that will be used in case no item is found and the access token for twitch API.
 
 ==== MORE INFO ====
 

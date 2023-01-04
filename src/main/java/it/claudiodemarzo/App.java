@@ -11,7 +11,7 @@ import java.io.File;
 import java.util.*;
 
 public class App {
-    private static final String TOKEN = "dmwc3wx56hlhx73lkoh7oqlorkd49x";
+    private static String TOKEN;
     private static final String CHANNEL_NAME = "treasureislands";
     private static final String VERSION = "1.4";
     private static String UNAVAILABLE_STRING;
@@ -67,6 +67,7 @@ public class App {
         try {
             JSONObject configObj = new JSONObject(data);
             UNAVAILABLE_STRING = configObj.getString("unavailable_string");
+            TOKEN = configObj.getString("token");
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Error while parsing config");
@@ -181,7 +182,7 @@ public class App {
         List<String> result = new ArrayList<>();
         for (String island : ITEMS.keySet()) {
             for(String item : ITEMS.get(island)) {
-                if(item.toLowerCase().contains(query.toLowerCase())) {
+                if(item.equalsIgnoreCase(query)) {
                     result.add(island);
                 }
             }

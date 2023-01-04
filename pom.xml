@@ -6,7 +6,7 @@
 
     <groupId>it.claudiodemarzo</groupId>
     <artifactId>treasurecatalogue-bot</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
