@@ -13,7 +13,7 @@ import java.util.*;
 public class App {
     private static String TOKEN;
     private static final String CHANNEL_NAME = "treasureislands";
-    private static final String VERSION = "1.4";
+    private static final String VERSION = "1.5";
     private static String UNAVAILABLE_STRING;
 
     private static TwitchClient client;
